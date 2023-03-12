@@ -38,6 +38,8 @@ pipeline {
     stage('logout') {
       steps {
         sh 'docker logout'
+	      sh 'docker stop app'
+	      sh 'docker rm app'
       }
     }
   }
